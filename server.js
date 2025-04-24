@@ -9,10 +9,12 @@ connectDB();
 
 const app = express();
 
+const allowedOrigins = ["http://localhost:5173","https://triviaquizwhiz.netlify.app/"]
+
 app.use(express.json());
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: allowedOrigins,
     credentials: true,
   })
 );
